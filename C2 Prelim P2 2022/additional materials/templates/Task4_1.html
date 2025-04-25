@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Health Application</title>
+</head>
+<body>
+    <h1>Welcome to the Student Health Records System</h1>
+    <ul>
+        <li><a href="/records">Student health records</a></li>
+        <li><a href="/statistics">Health record statistics</a></li>
+        <li><a href="/add">Add health record</a></li>
+    </ul>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

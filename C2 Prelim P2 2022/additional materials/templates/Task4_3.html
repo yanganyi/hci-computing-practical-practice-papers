@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Record Statistics</title>
+</head>
+<body>
+    <h1>Health Record Statistics</h1>
+    <table border="1">
+        <tr>
+            <th>Gender</th>
+            <th>Total Students</th>
+            <th>Average Weight</th>
+            <th>Average Height</th>
+        </tr>
+        {% for row in statistics %}
+        <tr>
+            <td>{{ row['Gender'] }}</td>
+            <td>{{ row['TotalStudents'] }}</td>
+            <td>{{ "%.2f"|format(row['AverageWeight']) if row['AverageWeight'] is not none else 'NULL' }}</td>
+            <td>{{ "%.2f"|format(row['AverageHeight']) if row['AverageHeight'] is not none else 'NULL' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Back to home</a>
+</body>
+</html>

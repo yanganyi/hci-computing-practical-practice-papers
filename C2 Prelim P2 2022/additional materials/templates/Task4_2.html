@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Health Records</title>
+</head>
+<body>
+    <h1>Student Health Records</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Weight</th>
+            <th>Height</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row['Name'] }}</td>
+            <td>{{ row['Gender'] }}</td>
+            <td>{{ row['Weight'] if row['Weight'] is not none else 'NULL' }}</td>
+            <td>{{ row['Height'] if row['Height'] is not none else 'NULL' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Back to home</a>
+</body>
+</html>
